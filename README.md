@@ -58,6 +58,7 @@ kode: Test123
 *Indsæt svar 1*
 En morph relation gør det muligt for en model at relatere til flere forskellige modeller gennem en fælles relation. I stedet for at skulle håndtere flere forskellige foreign keys, forenkler morph relationen strukturen og gør det lettere at opretholde fleksible relationer mellem modeller. 
 
+For eksempel, hvis vi i denne opgave har både 'tasks' tilknyttet 'projects', og der både kan være kommentarer til 'projects' og til 'tasks', kan man med fordel bruge en polymorf relation. På den måde kan kommentarerne gemmes i én fælles tabel med felter for id, type og kommentar, som peger på enten et projekt eller en opgave.
 ``` Spørgsmål 2 ```
 
 ``` Du har en database med mange relationer hvor company er den model hvor alle relationer til et given virksomhed har relationer til. Hvordan sikre du dig, at data slettes i relationsmodellerne, når du sletter en givent virksomhed? ```
