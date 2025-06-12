@@ -11,7 +11,22 @@ use App\Models\User;
 
 class Project extends Model
 {
-    protected $fillable = [];
     /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'owner',
+        'title',
+        'description',
+    ];
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function owner(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

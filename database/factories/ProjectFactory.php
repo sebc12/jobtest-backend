@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Comment;
 use App\Models\User;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
@@ -18,9 +19,9 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-         'owner' => 1,
-         'title' => fake()->company(),
-         'description' => fake()->realTextBetween(100,300)
+            'owner' => 1,
+            'title' => fake()->company(),
+            'description' => fake()->realTextBetween(100, 300)
 
         ];
     }

@@ -15,7 +15,7 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-         User::updateOrCreate(
+        User::updateOrCreate(
             [
                 'name' => 'Test User',
                 'email' => 'test@test.test',
@@ -24,12 +24,11 @@ class ProjectSeeder extends Seeder
         );
 
         $users = User::factory()->count(1)->create();
-        foreach ($users as $user){
-        Project::factory()
-            ->count(5)
-            ->hasComments(2000)
-            ->create(['owner' => $user->id]);
+        foreach ($users as $user) {
+            Project::factory()
+                ->count(5)
+                ->hasComments(2000)
+                ->create(['owner' => $user->id]);
         }
-        
     }
 }
