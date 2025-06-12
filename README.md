@@ -56,19 +56,22 @@ kode: Test123
 ``` Relation morph ```
 
 *Indsæt svar 1*
+En morph relation gør det muligt for en model at relatere til flere forskellige modeller gennem en fælles relation. I stedet for at skulle håndtere flere forskellige foreign keys, forenkler morph relationen strukturen og gør det lettere at opretholde fleksible relationer mellem modeller. 
 
 ``` Spørgsmål 2 ```
 
 ``` Du har en database med mange relationer hvor company er den model hvor alle relationer til et given virksomhed har relationer til. Hvordan sikre du dig, at data slettes i relationsmodellerne, når du sletter en givent virksomhed? ```
 
 *Indsæt Svar 2*
-
+Vi kan sikre os, at data i relaterede modeller slettes ved at bruge "onDelete('cascade')" i vores migrationsfiler. Når vi opretter en foreign key i en migration der referer til 'company', så tilføjer vi "onDelete('cascade')".
 
 ``` Spørgsmål 3```
 
 ``` Når du skal lave funktionskode, f.eks. du behandler model data inden du skal sende det til et view, hvor placere du funktionskoden? ```
 
 *Indsæt Svar 3*
+Man kan placere funktionskoden i en controller, hvor vi f.eks. kan lave pagination, sortering eller filtrering.
+Hvis man ønsker at holde controlleren mere overskuelig og adskille logik fra præsentation, kan man i stedet bruge en ViewModel. En ViewModel kan bruges til at lave data klart til præsentation.
 
 
 ``` Spørgsmål 4 ```
@@ -76,7 +79,12 @@ kode: Test123
 ``` Du sidder og skal arbejde for en kunde, hvis applikation køre uden PHP framework. Du skal lave et input felt og gemme det i databasen. Hvilke overvejelser gør du?  ```
 
 *Indsæt Svar 4*
+Når man arbejder uden et PHP-framework som f.eks. Laravel, har man ikke adgang til de sikkerhedsmekanismer, som et framework normalt stiller til rådighed. Derfor vil jeg have særligt fokus på sikkerhed og korrekt håndtering af data.
 
+For eksempel vil jeg sørge for, at alt input bliver valideret og saniteret, så det kun indeholder gyldige værdier, og skadelig kode fjernes.
+Når data skal vises i et view, sørger jeg for at escape outputtet, så der ikke kan afvikles skadelig HTML eller JavaScript (XSS-angreb).
+
+Kort sagt vil jeg sikre, at alle relevante sikkerhedsforanstaltninger er på plads, så applikationen er robust og beskyttet mod angreb.
 
 ## Efter testen
 Vi reviewer din løsning i ugen efter d. 22/6-25, hvorefter du vil få feedback på testudførslen. 
